@@ -6,23 +6,31 @@ import React,{useContext} from 'react';
 
 export default function Cart(props) {
     const cartCtx = useContext(CartContext)
-    // const cartElements = [
-    //     { title: 'Colors', price: 100, imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%201.png', quantity: 2, },
-    //     { title: 'Black and white Colors', price: 50, imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%202.png', quantity: 3, },
-    //     { title: 'Yellow and Black Colors', price: 70, imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%203.png', quantity: 1, }
-    // ]
+
+    function removeItem(e)
+    {
+        e.preventDefault();
+        // console.log(e.target.parentNode.parentNode.children[0].children[0].src)
+        let id =e.target.parentNode.parentNode.children[0].children[0].src
+        cartCtx.removeItem(id)
+    }
+
+    
 
     const cartDisplayJsx = cartCtx.items.map((item) =>
     {
+        
         return(
-            <tr >
-                <td style={{padding:'15px'}}><img style={{width:'80px',height:'80px'}} src={item.imageURL} alt="pic" />{item.title}</td>
+            <tr key={item.title} >
+                <td style={{padding:'15px'}}><img style={{width:'80px',height:'80px'}} src={item.imageURL} alt="pic" /> {item.title}</td>
                 <td style={{padding:'15px'}}>Rs {item.price}</td>
                 <td style={{padding:'15px'}}>{parseInt(item.quantity)}</td>
-                <td style={{padding:'15px'}}><button style={{borderRadius:'15px',color:'white',background:'blue'}}>Remove</button></td>
+                <td style={{padding:'15px'}}><button onClick={removeItem} style={{borderRadius:'15px',color:'white',background:'blue'}}>Remove</button></td>
             </tr>
         )
     })
+
+    const a = (<p>Yout Items are below </p>)
      return (
         <div
             className="modal show"
@@ -34,7 +42,7 @@ export default function Cart(props) {
                 </Modal.Header>
 
                 <Modal.Body>
-                    <p>Yout Items are below </p>
+                    {cartCtx.items.length>0 ?a:<i>empty cart</i>}
                     {cartDisplayJsx}
                 </Modal.Body>
 

@@ -5,6 +5,9 @@ import { useState } from 'react';
 import Cart from './components/Cart';
 import CartProvider from './store/CartProvider';
 
+
+
+
 function App() {
   const [cartState, setCartState] = useState(false);
 
@@ -21,11 +24,14 @@ function App() {
   }
 
   return (
+    <>
+    
     <CartProvider>
     {cartState && <Cart closeCart={cartFalse}/>}
     <Header cartTrue={cartTrue}/>
     <Display/>
     </CartProvider>
+    </>
   );
 }
 

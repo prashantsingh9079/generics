@@ -23,7 +23,7 @@ export default function Header(props) {
                         <Nav.Link href="#features">Store</Nav.Link>
                         <Nav.Link href="#pricing">About</Nav.Link>
                     </Nav>
-                    <Button onClick={props.cartTrue}>Cart <span style={{color:'red',fontSize:'medium'}}>{num}</span></Button>
+                    <Button onClick={props.cartTrue}>Cart <button style={{background:'red',borderRadius:'10px'}}> <span style={{color:'white',fontSize:'medium'}}>{num}</span> </button></Button>
                 </Container>
             </Navbar>
             <Card>

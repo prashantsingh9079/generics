@@ -5,6 +5,32 @@ export default function CartProvider(props) {
 
 const [arr,setArr] = useState([]);
 
+function removeItem(id)
+{
+  setArr((a)=>
+  {
+    const newA=[];
+    for(let i=0; i<a.length; i++)
+    {
+      // console.log("comparing"+a[i].imageURL+"--->"+id)
+      if(id===a[i].imageURL && a[i].quantity>0)
+      {
+        console.log("near to delete")
+        if(a[i].quantity >1)
+        {
+          let b={title:a[i].title,price:a[i].price,quantity:a[i].quantity-1,imageURL:a[i].imageURL}
+          newA.push(b)
+        }
+      }
+      else{
+        newA.push(a[i])
+      }
+    }
+    return newA
+  }
+  )
+}
+
 function addItem(obj)
 {
   setArr((a) =>
@@ -45,7 +71,7 @@ function addItem(obj)
 
 
   return (
-    <CartContext.Provider value={{items:arr,addItem:addItem}}>
+    <CartContext.Provider value={{items:arr,addItem:addItem,removeItem:removeItem}}>
       {props.children}
     </CartContext.Provider>
   )
