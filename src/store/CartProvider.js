@@ -10,27 +10,35 @@ function addItem(obj)
   setArr((a) =>
   {
     let flag =0;
+    const newA = []
     if(a.length !==0)
     {
+      
       for(let i=0; i<a.length; i++)
       {
         if(a[i].title === obj.title)
         {
           flag=1;
           let x = parseInt(a[i].quantity)
-          a[i].quantity = x+1;
-          break;
+          x = x+1;
+          let b={title:a[i].title,price:a[i].price,quantity:x,imageURL:a[i].imageURL}
+          newA.push(b)
+          
+        }
+        else{
+          newA.push(a[i])
         }
       }
     }
     
     if(flag === 1)
     {
-      return([...a])
+      return(newA)
     }
     else
     {
-      return ([...a,obj])
+      const newAA = a.concat(obj)
+      return (newAA)
     }
   })
 }
