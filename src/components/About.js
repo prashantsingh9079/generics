@@ -1,11 +1,26 @@
 import React from 'react'
-import Header from './Header'
+import {Nav,Container,Navbar,Card} from 'react-bootstrap'
 import imga from '../assets/imga.jpg'
 
 export default function About() {
     return (
         <div>
-            <Header />
+            <>
+            <Navbar bg="dark" data-bs-theme="dark">
+                <Container>
+                    <Navbar.Brand href="/">The Generics</Navbar.Brand>
+                    <Nav className="me-auto">
+                        <Nav.Link href="/home">Home</Nav.Link>
+                        <Nav.Link href="/">Store</Nav.Link>
+                        <Nav.Link href="/about">About</Nav.Link>
+                    </Nav>
+                    {/* <Button onClick={props.cartTrue}>Cart <button style={{background:'red',borderRadius:'10px'}}> <span style={{color:'white',fontSize:'medium'}}>{num}</span> </button></Button> */}
+                </Container>
+            </Navbar>
+            <Card>
+                <Card.Body style={{textAlign:'center',background:'grey',color:'white',padding:'5rem',fontSize:'xxx-large'}}>THE GENERICS</Card.Body>
+            </Card>
+        </>
             <h1 style={{ textAlign: 'center', fontFamily: 'monospace' }}>About Us</h1>
             <span style={{ textAlign: 'center' }}>
                 <img src={imga} alt="" />

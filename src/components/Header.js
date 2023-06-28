@@ -17,11 +17,11 @@ export default function Header(props) {
         <>
             <Navbar bg="dark" data-bs-theme="dark">
                 <Container>
-                    <Navbar.Brand href="#home">The Generics</Navbar.Brand>
+                    <Navbar.Brand href="/">The Generics</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#features">Store</Nav.Link>
-                        <Nav.Link href="#pricing">About</Nav.Link>
+                        <Nav.Link href="/home">Home</Nav.Link>
+                        <Nav.Link href="/">Store</Nav.Link>
+                        <Nav.Link href="/about">About</Nav.Link>
                     </Nav>
                     <Button onClick={props.cartTrue}>Cart <button style={{background:'red',borderRadius:'10px'}}> <span style={{color:'white',fontSize:'medium'}}>{num}</span> </button></Button>
                 </Container>

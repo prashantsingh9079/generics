@@ -5,10 +5,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {createBrowserRouter,RouterProvider} from 'react-router-dom'
 import About from './components/About';
+import Home from './components/Home';
 
 const router = createBrowserRouter([
   {path:'/',element:<App/>},
-  {path:'/about', element:<About/>}
+  {path:'/about', element:<About/>},
+  {path:'/home',element:<Home/>}
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
