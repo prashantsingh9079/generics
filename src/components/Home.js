@@ -1,7 +1,7 @@
 import React from 'react'
 import { Nav, Navbar, Container, Card, Table, Button } from 'react-bootstrap'
 import bandImg from '../assets/imga.jpg'
-import videoIcon from '../assets/videoIcon.jpg'
+
 
 export default function Home() {
 
@@ -36,6 +36,7 @@ export default function Home() {
                             <Nav.Link href="/home">Home</Nav.Link>
                             <Nav.Link href="/">Store</Nav.Link>
                             <Nav.Link href="/about">About</Nav.Link>
+                            <Nav.Link href='/contact'>Contact Us</Nav.Link>
                         </Nav>
                         {/* <Button onClick={props.cartTrue}>Cart <button style={{background:'red',borderRadius:'10px'}}> <span style={{color:'white',fontSize:'medium'}}>{num}</span> </button></Button> */}
                     </Container>

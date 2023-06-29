@@ -6,11 +6,13 @@ import reportWebVitals from './reportWebVitals';
 import {createBrowserRouter,RouterProvider} from 'react-router-dom'
 import About from './components/About';
 import Home from './components/Home';
+import Contact from './components/Contact';
 
 const router = createBrowserRouter([
   {path:'/',element:<App/>},
   {path:'/about', element:<About/>},
-  {path:'/home',element:<Home/>}
+  {path:'/home',element:<Home/>},
+  {path:'/contact',element:<Contact/>}
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

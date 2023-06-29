@@ -1,5 +1,5 @@
 import React from 'react'
-import {Nav,Container,Navbar,Card} from 'react-bootstrap'
+import {Nav,Container,Navbar,Card, NavLink} from 'react-bootstrap'
 import imga from '../assets/imga.jpg'
 
 export default function About() {
@@ -13,6 +13,7 @@ export default function About() {
                         <Nav.Link href="/home">Home</Nav.Link>
                         <Nav.Link href="/">Store</Nav.Link>
                         <Nav.Link href="/about">About</Nav.Link>
+                        <NavLink href='/contact'>Contact Us</NavLink>
                     </Nav>
                     {/* <Button onClick={props.cartTrue}>Cart <button style={{background:'red',borderRadius:'10px'}}> <span style={{color:'white',fontSize:'medium'}}>{num}</span> </button></Button> */}
                 </Container>
