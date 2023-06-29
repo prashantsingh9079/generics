@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
-import { Card, Button } from 'react-bootstrap'
+import { Card, Button, NavLink } from 'react-bootstrap'
 import CartContext from '../store/context-cart'
+// import {NavLink} from 'react-router-dom'
 
 export default function Display() {
     const cartCtx = useContext(CartContext)
@@ -32,7 +33,7 @@ export default function Display() {
                 <Card.Body>
                     <Card.Title>Album {idx}</Card.Title>
                     <Card.Text>
-                        {item.title}
+                        <NavLink href={`/product-details/${item.title}`}>{item.title}</NavLink>
                     </Card.Text>
                     <h4>Rs {item.price}</h4>
                     <Button onClick={sendData} variant="primary">Add to Cart</Button>
