@@ -48,6 +48,7 @@ export default function Contact() {
                         <Nav.Link href="/">Store</Nav.Link>
                         <Nav.Link href="/about">About</Nav.Link>
                         <NavLink href='/contact'>Contact Us</NavLink>
+                        <NavLink href='/login'>Login</NavLink>
                     </Nav>
                     {/* <Button onClick={props.cartTrue}>Cart <button style={{background:'red',borderRadius:'10px'}}> <span style={{color:'white',fontSize:'medium'}}>{num}</span> </button></Button> */}
                 </Container>

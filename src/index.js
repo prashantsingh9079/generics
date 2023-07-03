@@ -8,13 +8,18 @@ import About from './components/About';
 import Home from './components/Home';
 import Contact from './components/Contact';
 import Product from './components/Product';
+import Login from './components/Login';
+
+
+
 
 const router = createBrowserRouter([
   {path:'/',element:<App/>},
   {path:'/about', element:<About/>},
   {path:'/home',element:<Home/>},
   {path:'/contact',element:<Contact/>},
-  {path:'/product-details/:pid', element:<Product/>}
+  {path:'/product-details/:pid', element:<Product/>},
+  { path:'/login',element:<Login/>}
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

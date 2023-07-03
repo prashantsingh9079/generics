@@ -1,6 +1,6 @@
 import React,{useContext} from 'react'
 import './Header.css';
-import { Navbar, Nav, Container, Button, Card } from 'react-bootstrap'
+import { Navbar, Nav, Container, Button, Card, NavLink } from 'react-bootstrap'
 import CartContext from '../store/context-cart';
 
 export default function Header(props) {
@@ -23,6 +23,7 @@ export default function Header(props) {
                         <Nav.Link href="/">Store</Nav.Link>
                         <Nav.Link href="/about">About</Nav.Link>
                         <Nav.Link href='/contact'>Contact Us</Nav.Link>
+                        <NavLink href='/login'>Login</NavLink>
                     </Nav>
                     <Button onClick={props.cartTrue}>Cart <button style={{background:'red',borderRadius:'10px'}}> <span style={{color:'white',fontSize:'medium'}}>{num}</span> </button></Button>
                 </Container>
