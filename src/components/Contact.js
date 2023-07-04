@@ -1,4 +1,4 @@
-import React,{useRef} from 'react'
+import React,{useContext, useRef} from 'react'
 import { Nav, NavLink, Card, Container, Navbar } from 'react-bootstrap'
 // import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
@@ -6,8 +6,10 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
+import AuthContext from '../store/Auth-context';
 
 export default function Contact() {
+    const authCtx = useContext(AuthContext)
     const fnameRef = useRef();
     const lnameRef = useRef();
     const emailRef = useRef();
@@ -42,13 +44,13 @@ export default function Contact() {
         <div>
             <Navbar bg="dark" data-bs-theme="dark">
                 <Container>
-                    <Navbar.Brand href="/">The Generics</Navbar.Brand>
+                    <Navbar.Brand href="/store">The Generics</Navbar.Brand>
                     <Nav className="me-auto">
                         <Nav.Link href="/home">Home</Nav.Link>
-                        <Nav.Link href="/">Store</Nav.Link>
+                        <Nav.Link href="/store">Store</Nav.Link>
                         <Nav.Link href="/about">About</Nav.Link>
                         <NavLink href='/contact'>Contact Us</NavLink>
-                        <NavLink href='/login'>Login</NavLink>
+                        {!authCtx.isLogin && <Nav.Link href='/'>Login</Nav.Link>}
                     </Nav>
                     {/* <Button onClick={props.cartTrue}>Cart <button style={{background:'red',borderRadius:'10px'}}> <span style={{color:'white',fontSize:'medium'}}>{num}</span> </button></Button> */}
                 </Container>

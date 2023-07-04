@@ -1,31 +1,27 @@
 import React, { useState } from 'react'
 import AuthContext from './Auth-context'
 
+
 export default function AuthContextProvider(props) {
-    const [token,setToken] = useState(null)
+  const initailToken = localStorage.getItem("token")
+    const [token,setToken] = useState(initailToken)
+    
 
     function loginHandler(token)
     {
         setToken(token);
+        console.log(token)
     } 
 
     function logoutHandler()
     {
         setToken(null)
-    }
-
-    function checkIsLogin()
-    {
-        if(token=== null)
-        {
-            return false
-        }
-        return true
+        
     }
 
     const valueToBeGiven = {
         token:token,
-        isLogin:checkIsLogin,
+        isLogin:token?true:false,
         login:loginHandler,
         logout:logoutHandler
     }

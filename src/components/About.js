@@ -1,21 +1,23 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {Nav,Container,Navbar,Card, NavLink} from 'react-bootstrap'
 import imga from '../assets/imga.jpg'
+import AuthContext from '../store/Auth-context'
 
 
 export default function About() {
+    const authCtx = useContext(AuthContext)
     return (
         <div>
             <>
             <Navbar bg="dark" data-bs-theme="dark">
                 <Container>
-                    <Navbar.Brand href="/">The Generics</Navbar.Brand>
+                    <Navbar.Brand href="/store">The Generics</Navbar.Brand>
                     <Nav className="me-auto">
                         <Nav.Link href="/home">Home</Nav.Link>
-                        <Nav.Link href="/">Store</Nav.Link>
+                        <Nav.Link href="/store">Store</Nav.Link>
                         <Nav.Link href="/about">About</Nav.Link>
                         <NavLink href='/contact'>Contact Us</NavLink>
-                        <NavLink href='/login'>Login</NavLink>
+                        {!authCtx.isLogin && <Nav.Link href='/'>Login</Nav.Link>}
                     </Nav>
                     {/* <Button onClick={props.cartTrue}>Cart <button style={{background:'red',borderRadius:'10px'}}> <span style={{color:'white',fontSize:'medium'}}>{num}</span> </button></Button> */}
                 </Container>

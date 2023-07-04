@@ -3,30 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {createBrowserRouter,RouterProvider} from 'react-router-dom'
-import About from './components/About';
-import Home from './components/Home';
-import Contact from './components/Contact';
-import Product from './components/Product';
-import Login from './components/Login';
+import AuthContextProvider from './store/AuthContextProvider';
 
 
 
 
-const router = createBrowserRouter([
-  {path:'/',element:<App/>},
-  {path:'/about', element:<About/>},
-  {path:'/home',element:<Home/>},
-  {path:'/contact',element:<Contact/>},
-  {path:'/product-details/:pid', element:<Product/>},
-  { path:'/login',element:<Login/>}
-])
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  
-    <RouterProvider router={router}/>
-
+root.render(<AuthContextProvider><App /></AuthContextProvider>
 
 );
 
