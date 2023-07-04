@@ -12,7 +12,9 @@ export default function Cart(props) {
         e.preventDefault();
         // console.log(e.target.parentNode.parentNode.children[0].children[0].src)
         let id =e.target.parentNode.parentNode.children[0].children[0].src
+        console.log(e.target.parentNode.parentNode)
         cartCtx.removeItem(id)
+        fetch("https://crudcrud.com/api/600ed8c7fddc4d079c7b1e1e15b5d9c4/items")
     }
 
     

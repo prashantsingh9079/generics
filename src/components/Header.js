@@ -40,13 +40,14 @@ export default function Header(props) {
                         {/* {!authCtx.isLogin && <NavLink href='/login'>Login</NavLink>} */}
                         
                     </Nav>
-                    <Button style={{borderColor:'white'}} onClick={props.cartTrue}>Cart <button style={{background:'red',borderRadius:'10px'}}> <span style={{color:'white',fontSize:'medium'}}>{num}</span> </button></Button>
+                    <Button style={{borderColor:'white',background:'green'}} onClick={props.cartTrue}>Cart <button style={{background:'red',borderRadius:'10px'}}> <span style={{color:'white',fontSize:'medium'}}>{num}</span> </button></Button>
                     <div style={{paddingLeft:'6rem'}}><Button style={{background:'red',borderColor:'white'}} onClick={logoutHandler}  > Logout</Button></div>
                 </Container>
             </Navbar>
             <Card>
                 <Card.Body style={{textAlign:'center',background:'grey',color:'white',padding:'5rem',fontSize:'xxx-large'}}>THE GENERICS</Card.Body>
             </Card>
+            
         </>
     )
 }

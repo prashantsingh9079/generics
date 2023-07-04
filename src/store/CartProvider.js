@@ -50,9 +50,11 @@ function addItem(obj)
           let b={title:a[i].title,price:a[i].price,quantity:x,imageURL:a[i].imageURL}
           newA.push(b)
           
+          
         }
         else{
           newA.push(a[i])
+          
         }
       }
     }

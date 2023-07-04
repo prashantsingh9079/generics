@@ -65,6 +65,15 @@ export default function Home() {
                         </tbody>
                     </Table>
                 </Card>
+
+                <Navbar bg="dark" data-bs-theme="dark">
+                    <Container>
+                        <Navbar.Brand href="#">Copyright © 2023 By Prashant Singhh </Navbar.Brand>
+                        <Navbar.Brand href="https://prashantsingh.xyz/">Checkout my Portfolio</Navbar.Brand>
+                        <Navbar.Brand href="https://www.instagram.com/prashantsingh561/">Join me on Instagram</Navbar.Brand>
+                        
+                    </Container>
+                </Navbar>
             </>
         </div>
     )
