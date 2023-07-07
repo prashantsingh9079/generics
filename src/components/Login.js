@@ -12,12 +12,12 @@ const Login = () => {
     const navigate = useNavigate();
     const emailRef = useRef();
     const passwordRef = useRef();
-    console.log(authCtx.token)
+    // console.log(authCtx.token)
     const [isLogin, setIsLogin] = useState(true);
     const [req, setReq] = useState(false)
     const [e, setE] = useState(null);
     var msg = ''
-    console.log(authCtx.isLogin)
+    // console.log(authCtx.isLogin)
 
     const switchAuthModeHandler = () => {
         setIsLogin((prevState) => !prevState);
@@ -45,9 +45,11 @@ const Login = () => {
                 else 
                 {
                     const dataFromServer = await response.json()
-                    console.log(dataFromServer.idToken)
+                    // console.log(dataFromServer.idToken)
                     localStorage.setItem("token",dataFromServer.idToken)
                     authCtx.login(dataFromServer.idToken)
+                    authCtx.setEmail(enteredEmail)
+                    console.log(authCtx.email)
                     navigate('/store')
                 }
                 }
@@ -148,6 +150,7 @@ const Login = () => {
                     </div>
                 </form>
             </section>
+            
         </>
     );
 };

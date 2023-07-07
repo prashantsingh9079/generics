@@ -16,6 +16,21 @@ export default function Header(props) {
         return curNum + item.quantity;
     },0)
 
+    // console.log(cartCtx.itemsFromCC)
+    // for(let k=0; k<cartCtx.itemsFromCC.length; k++)
+    // {
+    //     console.log(cartCtx.itemsFromCC[k])
+    // }
+
+    // if(cartCtx.items.length===0)
+    // {
+    //     num=cartCtx.itemsFromCC.length;
+    // }
+
+    // num = cartCtx.itemsFromCC.reduce((curNum,item)=>{
+    //     return curNum + item.quantity;
+    // },0)
+
     function logoutHandler(e)
     {
         e.preventDefault();
@@ -25,7 +40,7 @@ export default function Header(props) {
         localStorage.removeItem("token")
         navigate('/')
     }
-    console.log(authCtx.isLogin)
+    // console.log(authCtx.isLogin)
     return (
         <>
             <Navbar bg="dark" data-bs-theme="dark">

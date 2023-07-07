@@ -26,13 +26,6 @@ export default function Display() {
 
             }
             cartCtx.addItem(obj)
-            fetch("https://crudcrud.com/api/600ed8c7fddc4d079c7b1e1e15b5d9c4/items",{
-            method:'POST',body:JSON.stringify(obj),headers:{'Content-Type':'application/json'}
-          }).then((res) =>{
-            console.log(res)
-          }).catch((err)=>{
-            console.log(err)
-          })
         }
 
         return (

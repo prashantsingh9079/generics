@@ -15,8 +15,8 @@ import { useContext } from 'react';
 function App() {
 
   const authCtx = useContext(AuthContext)
-  console.log(authCtx.token)
-  console.log(authCtx.isLogin)
+  // console.log(authCtx.token)
+  // console.log(authCtx.isLogin)
   // const router = createBrowserRouter([
   //   { path: '/store', element: <HeaderDisplay /> },
   //   { path: '/about', element: <About /> },
